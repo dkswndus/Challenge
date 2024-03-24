@@ -12,7 +12,7 @@ import java.util.Optional;
 //JpaRepository는 Spring Data JPA 프레임워크에서 제공하는 인터페이스 중 하나
 @SuppressWarnings("NullableProblems")
 @Transactional
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
+public interface UserRepository extends JpaRepository<UserEntity,Long> {
 
     //아이디 회원 정보 조회
 

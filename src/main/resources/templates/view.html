@@ -11,8 +11,8 @@
 <p th:text="'아이디: ' + ${user.userId}"></p>
 <p th:text="'비밀번호: ' + ${user.userPassword}"></p>
 <p th:text="'닉네임: ' + ${user.userNickname}"></p>
-<form action="@{'/user/delete/' ${user.id}}" method="post">
+<form action="/user/delete" method="post">
+    <input type="hidden" name="userId" th:value="${user.id}" />
     <input type="submit" value="회원탈퇴">
-</form>
-</body>
+</form></body>
 </html>

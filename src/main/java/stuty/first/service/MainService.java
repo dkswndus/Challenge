@@ -2,15 +2,13 @@ package stuty.first.service;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 import stuty.first.dto.UserDTO;
 import stuty.first.entity.UserEntity;
 import stuty.first.repository.UserRepository;
 
 
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.Optional;
 
 @Service
@@ -55,8 +53,8 @@ public class MainService {
 
 
 
-    public UserDTO findByUserId(String useriId) {
-        Optional<UserEntity> optionalUserEntity = userRepository.findByUserId(useriId);
+    public UserDTO findByUserId(String userId) {
+        Optional<UserEntity> optionalUserEntity = userRepository.findByUserId(userId);
         if(optionalUserEntity.isPresent()){
             return UserDTO.toUserDTO(optionalUserEntity.get());
         }

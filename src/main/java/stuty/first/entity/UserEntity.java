@@ -11,7 +11,7 @@ import stuty.first.dto.UserDTO;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "test")
+@Table(name = "hello")
 public class UserEntity {
 
     @Id  //pk지정

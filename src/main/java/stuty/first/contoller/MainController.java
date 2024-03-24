@@ -1,20 +1,16 @@
 package stuty.first.contoller;
 
 
-import org.apache.catalina.User;
-import org.apache.coyote.http11.HttpOutputBuffer;
+
 import org.springframework.ui.Model;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import stuty.first.dto.UserDTO;
 import stuty.first.service.MainService;
 
-import java.util.List;
+
 import java.util.Optional;
 
 
@@ -84,8 +80,10 @@ MainController {
         return "main";
     }
 
-    @PostMapping("/user/delete/{id}")
-    public String delete(@PathVariable Long id) {
+
+    // @RequestParam 특정 매개변수 추출
+    @PostMapping("/user/delete")
+    public String deleteUser(@RequestParam("userId") Long id) {
         mainService.deleteById(id);
         return "initial";
     }
